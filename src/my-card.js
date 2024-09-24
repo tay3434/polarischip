@@ -15,8 +15,8 @@ export class MyCard extends LitElement {
   constructor() {
     super();
     this.title = "My card";
-    this.description = "Default description for the card.";
-    this.imageSrc = "";
+    this.description = "Default description";
+    this.imageSrc = null;
     this.link = "#";
   }
 
@@ -31,12 +31,10 @@ export class MyCard extends LitElement {
         overflow: hidden;
         width: 300px;
       }
-      .card {
-        padding: 16px;
-      }
+    
 
       .img {
-        width: 100%;
+        width: 220px;
         height: auto;
         display: block;
       }
@@ -52,25 +50,51 @@ export class MyCard extends LitElement {
         color: #333;
       }
 
-      .button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 8px 16px;
-        text-align: center;
-        border-radius: 4px;
-        cursor: pointer;
-        text-decoration: none;
-      }
+    .container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .card{
+    background-color: powderblue;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 20px;
+    border: 4px solid gray;
+    width: auto;
+  }
 
-      .button:hover {
-        background-color: #0056b3;
+  .button{
+    background-color: navy;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 8px;
+    margin: 8px 16px;
+  }
+  .button:hover {
+          background-color: #0056b3;
+        }
+
+    @media screen and (min-width: 500px) and (max-width: 800px) {
+      .size {
+        display: block;
       }
+    }
+
+    @media screen and (max-width: 499px),
+    screen and (min-width: 801px) {
+      .size {
+        display: none;
+      }
+    }
     `;
   }
 
   render() {
     return html`
+    <div class="container"></div>
       <div class="card">
         <img class="img" src="${this.imageSrc}" alt="${this.title}">
         <h1>${this.title}</h1>
@@ -79,6 +103,7 @@ export class MyCard extends LitElement {
           <button class="button">Details</button>
         </a>
       </div>
+  </div>
     `;
   }
 
@@ -91,5 +116,6 @@ export class MyCard extends LitElement {
     };
   }
 }
+
 
 globalThis.customElements.define(MyCard.tag, MyCard);
