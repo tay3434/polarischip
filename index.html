@@ -19,10 +19,9 @@
     polaris-chip {
       margin: 16px;
     }
-    my-card{
-     margin: 16px;
-      
-}
+    my-card[curly] {
+      --my-card-curly-bg: #b49ec7;
+    }
   </style>
   <title>polaris-chip / my-card</title>
 </head>
@@ -36,36 +35,43 @@
   <polaris-chip title="Grants and donations"></polaris-chip>
 
   <h1>my-card</h1>
-  <my-card
+  <!-- <button id="duplicate" class="button">Clone Card</button>
+ <button id="bg-change" class="button">Change background</button>
+  <button id="change-title" class="button">Change Title</button>
+   <button id="change-image"class="button">Change Image</button>
+  <button id="delete-card"class="button">Delete Card</button> -->
+  <my-card curly
       title="Westgate Building"
     description="The Westgate Building is located on Penn State's campus and houses the College of IST."
     imageSrc="https://th.bing.com/th/id/OIP.IProhohtUfUwi5R1Hv_feQHaE7?rs=1&pid=ImgDetMain"
-    link="https://https://hax.psu.edu/">
+    link="https://hax.psu.edu/" >
+    <slot>This is the home of Information Sciences and Technology.</slot>
   </my-card>
-  <my-card
+  <my-card fancy
     title="Pattee and Paterno Library"
     description="Penn State's Pattee and Paterno Libraries offer extensive resources for students."
     imageSrc="https://sites.psu.edu/juliaspassion/files/2020/03/library-outside-1.jpg"
-    link="https://https://hax.psu.edu/">
+    link="https://hax.psu.edu/">
+    <slot>This is the Penn State Library.</slot>
   </my-card>
 
   <my-card
     title="Old Main"
     description="Old Main is one of the most iconic buildings at Penn State, located at the heart of campus."
     imageSrc="https://images.freeimages.com/images/large-previews/b9e/penn-state-old-main-1442296.jpg"
-    link="https://hax.psu.edu"></my-card>
+    link="https://hax.psu.edu"><slot>Iconic PSU Building.</slot></my-card>
 
   <my-card
     title="The Arboretum"
     description="The Arboretum at Penn State is a beautiful space for nature lovers."
     imageSrc="https://vacationidea.com/pix/img25Hy8R/articles/t-t2_arboretum_at_penn_state_158480_mobi.jpg"
-    link="https://https://hax.psu.edu/"></my-card>
+    link="https://hax.psu.edu/"><slot>Penn State's huge nature garden.</slot></my-card>
 
   <my-card
     title="Beaver Stadium"
     description="Beaver Stadium is home to Penn State Football and one of the largest stadiums in the world."
     imageSrc="https://th.bing.com/th/id/R.5d07d832dfc6057a2ed4fbf4f264e88d?rik=3rv3MUCp2sBDjQ&riu=http%3a%2f%2fmedia.pennlive.com%2fpatriotnewssports%2fphoto%2fbeaver-stadiumjpg-0a520fae2b4b0e0a.jpg&ehk=y%2f56XvCL1N%2fnfca6fq4kns6y81%2bQp%2fyVvJ1CiBY56no%3d&risl=&pid=ImgRaw&r=0"
-    link="https://https://hax.psu.edu/"></my-card>
+    link="https://hax.psu.edu/"><slot>Home of the Nittany Lions.</slot></my-card>
 
     <script type="module" src="./src/polaris-chip.js"></script>
     <script type="module" src="./src/my-card.js"></script>
